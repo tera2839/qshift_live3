@@ -274,8 +274,7 @@ public class AdminController {
 	
 	@PostMapping("/completeAdminRequest")
 	public String completeAdminRequest(
-			@RequestParam("requestShift")String[] shifts,
-			Model model
+			@RequestParam("requestShift")String[] shifts
 			) {
 		
 		for(int i = 0; i < shifts.length; i++) {
@@ -305,14 +304,17 @@ public class AdminController {
 			aService.saveAdminRequest(request);
 			
 		}
-		String url = aSession.getStore().getUrl();
-		model.addAttribute("url", url);
 		
 		return "redirect:/resultAdminRequest";
 	}
 	
 	@GetMapping("/resultAdminRequest")
-	public String showResultAdminRequest() {
+	public String showResultAdminRequest(
+		Model model
+		) {
+		String url = aSession.getStore().getUrl();
+		model.addAttribute("url", url);
+		
 		return "resultAdminRequest";
 	}
 	
@@ -544,8 +546,7 @@ public class AdminController {
 	public String completeClosinfShift(
 			@RequestParam("shift") String[] shifts,
 			@RequestParam("year") String year,
-			@RequestParam("month") String month,
-			Model model
+			@RequestParam("month") String month
 			) {
 		
 		for(String shift : shifts) {
@@ -597,14 +598,16 @@ public class AdminController {
 				}
 			}
 		}
-		String url = aSession.getStore().getUrl();
-		model.addAttribute("url", url);
+		
 		return "redirect:/resultClosingShift";
 	}
 	
 	@GetMapping("/resultClosingShift")
-	public String showResultClosingShift() {
-		
+	public String showResultClosingShift(
+		Model model
+	) {
+		String url = aSession.getStore().getUrl();
+		model.addAttribute("url", url);
 		
 		return "resultClosingShift";
 	}
