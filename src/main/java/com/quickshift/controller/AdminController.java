@@ -422,7 +422,7 @@ public class AdminController {
 		Store store = aService.findByStoreId(max);
 		Long id = store.getId();
 		
-		String url = requestUrl + "/memberLogin?store_id=" + id;
+		String url = "qshiftlive3-production.up.railway.app/memberLogin?store_id=" + id;
 		aService.updateStoreUrl(id, url);
 		
 		for(int i = 0; i < 15; i++) {
