@@ -428,7 +428,7 @@ public class AdminController {
 		Store store = aService.findByStoreId(max);
 		Long id = store.getId();
 		
-		String url = requestUrl + "/memberLogin?store_id=" + id;
+		String url = requestUrl + "/memberLogin?storeId=" + id;
 		aService.updateStoreUrl(id, url);
 		
 		for(int i = 0; i < 15; i++) {
