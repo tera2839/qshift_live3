@@ -1,0 +1,119 @@
+.humbar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 40px;
+  height: 30px;
+  cursor: pointer;
+  position: absolute;
+  top: 8px;
+  right: 2%;
+  z-index: 5;
+}
+
+.humbar span {
+  display: block;
+  width: 100%;
+  height: 5px;
+  background-color: #333;
+  border-radius: 5px;
+  position: absolute;
+  z-index: 5;
+  transition: all 0.3s ease-in-out;
+}
+
+.humbar span:nth-child(1) {
+  top: 0;
+}
+
+.humbar span:nth-child(2) {
+  top: 12px;
+}
+
+.humbar span:nth-child(3) {
+  top: 24px;
+}
+
+.humbar.active span:nth-child(1) {
+  transform: translateY(12px) rotate(45deg);
+}
+
+.humbar.active span:nth-child(2) {
+  transform: rotate(-45deg);
+}
+
+.humbar.active span:nth-child(3) {
+  transform: translateY(-12px) rotate(45deg);
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  right: -60%;
+  width: 200px;
+  height: 100vh;
+  background: rgba(179, 244, 255, 0.5);
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.menu.on {
+  opacity: 1;
+  right: 0;
+  animation: slideIn 0.5s ease-out forwards;
+}
+
+.menu.off {
+  animation: slideOut 0.5s ease-out forwards;
+}
+
+nav {
+  width: 100%;
+  margin-top: 50px;
+}
+
+nav ol{
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  font-size: 1.1rem;
+}
+
+nav ol li{
+  padding: 10px 0px;
+  padding-left: 20px;
+  border-bottom: 3px solid rgba(65, 65, 65, 0.5);
+  width: 100%;
+  margin-top: 10px;
+  cursor: pointer;
+  margin-top: 14px;
+  list-style: none;
+  border-radius: 14px;
+  transition: all 0.7s;
+}
+
+nav ol li:hover{
+  background: rgb(255, 216, 222);
+ 
+}
+
+@keyframes slideIn {
+  0% {
+    right: -60%;
+  }
+  100% {
+    right: 0;
+  }
+}
+
+@keyframes slideOut {
+  0% {
+    right: 0;
+  }
+  100% {
+    right: -60%;
+  }
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QUICK SHIFT</title>
+  <link rel="shortcut icon" href="/img/logo.svg">
+  <link rel="shortcut icon" href="/img/logo.svg">
+  <link rel="stylesheet" href="../css/memberLogin.css">
+  <link rel="stylesheet" href="../css/ress.css">
+  <link rel="stylesheet" href="../css/media.css">
+  <link rel="stylesheet" href="../css/media_NoneHeader.css">
+  <link rel="stylesheet" href="../css/form.css">
+</head>
+<body>
+  <main>
+    <form th:action="@{/completeMemberLogin}" method="post">
+      <input type="hidden" name="_csrf" value="${_csrf.token}"/>
+      <div class="main-title">
+        <h1><img src="../img/logo.svg"></h1>
+        <h3 class="store-name" th:text="${storeName}"></h3>
+        <h3>ログイン</h3>
+        <h4>パスワードを入力してください</h4>
+      </div>
+      <div class="login">
+        <p class="error"></p>
+        <input type="password" name="pass" size="15">
+      </div>
+	  <h4><span class="error" th:if="${error}" th:text="${error}"></span></h4>
+      <div class="footer">
+        <a onclick="login()">ログイン</a>
+      </div>
+    </form>
+  </main>
+  <input type="hidden" class="name-hidden" th:value="${name}">
+</body>
+<script src="../js/memberLogin.js"></script>
+</html>

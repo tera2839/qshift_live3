@@ -1,0 +1,131 @@
+body{
+    width:100%;
+    height:100vh;
+    display: flex;
+    justify-content: center;
+    overflow-x: hidden;
+}
+
+ * {
+    box-sizing: border-box;
+ }
+.tmp{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.adpas{
+    margin-top: 2rem;
+    margin-bottom: 0px;
+}
+
+.pass-area{
+    margin-left:30px;
+}
+.form2{
+    font-size: 1rem;
+    width: 15rem;
+    height: 1.5rem;
+}
+
+.login-form {
+	height: 80px !important;
+	min-height: 80px !important;
+	max-height: none !important;
+	overflow: visible !important;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+main{
+    font-size: 0.9rem;
+    width: 350px;
+    margin-top: 5%;
+    height: 90%;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+form{
+    width: 100%;
+    height: 660px;
+    background-color:  rgba(240, 248, 255, 0.4);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: solid 1px #333;
+    border-radius: 10px;
+    overflow-y: auto;
+    box-shadow:  6px 6px gainsboro;
+}
+
+form::-webkit-scrollbar {
+    display: none;
+}
+img{
+    width: 140px;
+    height: auto;
+ 
+}
+h4{
+    margin-bottom: 3px;
+}
+#erm{
+    color: red;
+}
+.login-botton{
+    font-weight: 600;
+    padding: 0.5rem 2rem;
+    margin-top:15px ;
+    border-radius: 10px;
+    background-color: #adf4fd;
+    color: #333;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 4px #f8a0d9;
+    border: none; 
+    transition: 0.4s;
+	height: 40px;
+}
+.login-botton:hover{
+   margin-top: 19px;
+   box-shadow:  0 4px lightcyan;
+   background-color: #f8a0d9;
+}
+#first{
+    margin: 3rem 0rem 0rem;
+}
+
+#buttonEye {
+    margin-top: 10px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+@media (max-width: 465px) {
+    .pass-area{
+        margin-left: 26px;
+    }
+}
+
+@media (min-width: 466px) and (max-width: 620px) {
+    body{
+        margin:0;
+    }
+    .pass-area{
+        margin-left: 30px;
+    }
+} 
+
+@media  (min-width: 621px) and (max-width: 850px) {
+    .pass-area{
+        margin-left: 30px;
+    }
+}
+

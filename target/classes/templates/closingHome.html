@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QUICK SHIFT</title>
+  <link rel="shortcut icon" href="/img/logo.svg">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/humbar.css">
+  <link rel="stylesheet" href="../css/closingHome.css">
+  <link rel="stylesheet" href="../css/form.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../img/logo.svg">
+            <h3>QUICK SHIFT</h3>
+        </div>
+        <div class="humbar" onclick="activeClick()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+      </header>
+  <main>
+	<form th:action="@{/aaa}" method="post">
+		<input type="hidden" name="_csrf" value="${_csrf.token}"/>
+      <div class="main-title">
+        <h3>シフト締め切り</h3>
+        <h4>締め切るシフトを選択してください</h4>
+      </div>
+      <div class="shifts">
+        
+      </div>
+      <a href="javascript:history.back()" class="back">戻る</a>
+    </form>
+  </main>
+  <div class="shift-hiddens" th:each="str : ${months}">
+    <input class="shift-hidden" name="shift" th:value="${str}">
+  </div>
+</body>
+<script src="../js/humbar.js"></script>
+<script src="../js/closingHome.js"></script>
+</html>

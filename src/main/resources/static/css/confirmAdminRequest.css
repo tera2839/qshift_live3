@@ -1,0 +1,332 @@
+
+html, body {
+    height: 100%; 
+    margin: 0; 
+}
+
+.main-calendar {
+    display: flex;
+    width: 900px;
+    height: 100vh;
+}
+
+.time-plans{
+    width: 30%;
+    height: 450px;
+    text-align: center;
+    overflow-y: auto;
+    flex-shrink: 0;
+    overflow-x: hidden;
+}
+.menber::-webkit-scrollbar{
+    display:none;
+  }
+
+.time-plan {
+    height: auto;
+    width: 150px;
+    overflow-y: auto;
+}
+
+.time-plan::-webkit-scrollbar{
+    display:none;
+  }
+
+.men {
+    width: 149px;
+    min-width: 130px;
+    height: 50px;
+    margin-bottom: 1px;
+    border: solid 1px #333;
+}
+
+.up-calendar {
+    height: 99px;
+}
+
+.block {
+    padding-bottom: 0px;
+    display: block;
+    position: sticky;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid #333;
+    border-left: 1px solid #333;
+    border-right: 1px solid #333;
+    border-bottom:  1px solid #333;
+    background: #f6f5f4;
+}
+
+.block::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    z-index: -1;
+}
+
+.calendar-container {
+    width: 80%;
+    height: 450px;
+    overflow-x: auto;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-color: #d7d7d7 #eefbff;
+    scrollbar-width: thin;
+}
+
+#calendar {
+    table-layout: fixed;
+    position: sticky;
+    top: 0;
+    left: 0;
+    height: 99px;
+    width: auto;
+    min-width: 3100px;
+    background: #e1e1e1;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+#calendar::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #ccc;
+    z-index: -1;
+  }
+
+#day,#days{
+    width: 110px;
+    font-size: 1.3rem;
+}
+
+#day td{
+    box-sizing: border-box;
+    width: 100px;
+    border: solid 1px black;
+}
+
+td.odd {
+    background: rgb(255, 237, 240);
+}
+
+td.even {
+    background-color: rgb(211, 254, 255);
+}
+
+#days td{
+    border: solid 1px black;
+}
+
+.time {
+    table-layout: fixed;
+    width: 3100px;
+    height: 300px;
+    overflow-y: scroll;
+    border-collapse: collapse !important;
+}
+
+.time tr {
+    display: flex;
+}
+
+.time tr td {
+    display: block;
+    width: 109.97px;
+    height: 74px;
+    border:solid 1px black
+}
+
+
+#view-year {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    margin-left: 0 !important;
+    margin-top: 40px;
+}
+
+#view-year p{
+    margin: 0 auto;
+    width: 120px;
+    height: 50px;
+}
+
+.main-title {
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+
+body{
+    width:100%;
+    height:100vh;
+    max-width: 800%;
+    min-width: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    overflow-x: hidden;
+    font-size: 1.25rem;
+  
+
+}
+main{
+    margin-top: 80px;
+    width:470px;
+    height: 700px;
+    color: #333;
+    font-size:0.9rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    width: 100%;
+    overflow-y: auto; /* 縦スクロールを有効化 */
+    padding-top: 0.1rem;
+    display: flex;
+    flex-direction: column; /* 縦に並べる */
+    align-items: flex-start; /* 左寄せ */
+    justify-content: flex-start; /* 上から並べる */
+    border: solid 1px #333;
+    background-color:  rgba(240, 248, 255, 0.4);
+    border-radius: 10px;
+    box-shadow: 6px 6px gainsboro;
+    font-size: 1rem;
+    padding: 1rem;
+}
+
+form::-webkit-scrollbar {
+    display: none;
+}
+
+.main-calendar {
+    width: 100%;
+}
+
+#view-year {
+    display: block;
+    width: 150px;
+    height: 80px;
+    margin-left: 20px
+}
+.plan {
+    border: 1px solid #333;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 98%;
+    height: 74.5px;
+
+}
+
+.plan.odd {
+    background: rgb(255, 237, 240);
+}
+
+.plan.even {
+    background-color: rgb(211, 254, 255);
+}
+
+.plan p{
+    margin: 0;
+}
+
+.time-plan {
+    overflow-x: hidden;
+    height: 347px;
+    width: 100%;
+}
+
+.plan-time {
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+}
+
+.input-cell {
+    all: unset;
+    width: 100%;
+    height: 100%;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.input-cell.in1 {
+    background: rgb(255, 230, 247);
+}
+
+.footer {
+    width: 70%;
+    margin: 10px auto;
+    height: 200px;
+    color: red;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer h4 {
+    text-decoration: none;
+    display: flex;
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    margin: 20px auto;
+    font-size: 1.1rem;
+    cursor: pointer;
+    text-align: center;
+    background: rgb(200, 247, 255);
+    font-weight: 600;
+    background-color: #adf4fd;
+    color: #333;
+    box-shadow: 0 4px #f8a0d9;
+    border: none;
+    transition: 0.4s;
+    align-items: center; /* 縦方向の中央揃え */
+    justify-content: center; 
+}
+
+.date-hiddens {
+    display: none;
+}
+
+.none {
+    display: none;
+}
+
+.select-hidden {
+    display: none;
+}
+
+.time-cell {
+    pointer-events: none;
+}
+
+
+.time-cell.odd {
+	background: rgb(255, 230, 247);
+}
+
+@media (max-width: 465px) {
+	form{
+		width:93%;
+	}
+	.plan-time{
+		width:96%;
+	}
+}

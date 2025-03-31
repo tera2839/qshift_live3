@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QUICK SHIFT</title>
+  <link rel="shortcut icon" href="/img/logo.svg">
+  <link rel="stylesheet" href="../css/memberSelectName.css">
+  <link rel="stylesheet" href="../css/ress.css">
+  <link rel="stylesheet" href="../css/media.css">
+  <link rel="stylesheet" href="../css/media_NoneHeader.css">
+  <link rel="stylesheet" href="../css/form.css">
+</head>
+<body>
+  <main>
+    <form th:action="@{/aaa}" method="post">
+      <input type="hidden" name="_csrf" value="${_csrf.token}"/>
+      <div class="main-title">
+        <h1><img src="../img/logo.svg"></h1>
+        <h3>名前選択</h3>
+        <h4>自身の名前を選択してください</h4>
+      </div>
+      <div class="select">
+        <p class="error"></p>
+        <select class="member" >
+          <option name="name" th:each="member : ${members}" th:if="${member.getName().length != 0}" th:value="${member.getId()}" th:text="${member.getName()}"></option>
+        </select>
+      </div>
+      <div class="footer">
+        <a onclick="select()">選択</a>
+      </div>
+    </form>
+  </main>
+</body>
+<script src="../js/memberSelectName.js"></script>
+</html>

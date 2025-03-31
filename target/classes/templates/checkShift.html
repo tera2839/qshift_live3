@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QUICK SHIFT</title>
+  <link rel="shortcut icon" href="/img/logo.svg">
+  <link rel="stylesheet" href="../css/ress.css">
+  <link rel="stylesheet" href="../css/checkShift.css">
+</head>
+<body>
+  <main>
+    <form>
+      <div class="main-title">
+        <h1><img src="../img/logo.svg"></h1>
+        <h3>シフト確認</h3>
+      </div>
+      <div class="main-calendar">
+        <div class="menber">
+            <span id="view-year" class="block up-calendar"></span>
+            <div class="menbers">
+            </div>
+        </div>
+        <div class="calendar-container">
+            <table id="calendar" class="up-calendar">
+                <tr id="days"></tr>
+                <tr id="day"></tr>
+            </table>
+            <table class="time">
+            </table>
+        </div> 
+      </div>
+      <div class="footer">
+          <a onclick="javascript:history.back()">戻る</a>
+      </div> 
+    </form>
+  </main>
+  <div class="hiddens">
+    <div class="member-hiddens" th:each="member : ${members}">
+      <input type="hidden" class="member-hidden" th:value="${member.getName()}">
+    </div>
+    <div class="shift-hiddens" th:each="shift : ${shifts}">
+      <input type="hidden" class="shift-hidden" th:value="${shift}">
+    </div>
+    <div class="date-hiddens">
+      <input class="date-hidden" th:value="${yearMonth}">
+    </div>
+  </div>
+</body>
+<script src="../js/humbar.js"></script>
+<script src="../js/calendar.js"></script>
+<script src="../js/checkShift.js"></script>
+</html>

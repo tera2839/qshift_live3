@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QUICK SHIFT</title>
+  <link rel="shortcut icon" href="/img/logo.svg">
+  <link rel="shortcut icon" href="/img/logo.svg">
+  <link rel="stylesheet" href="../css/checkHome.css">
+  <link rel="stylesheet" href="../css/ress.css">
+  <link rel="stylesheet" href="../css/media.css">
+  <link rel="stylesheet" href="../css/media_NoneHeader.css">
+  <link rel="stylesheet" href="../css/form.css">
+</head>
+<body>
+  <main>
+    <form th:action="@{/aaa}" method="post">
+	<input type="hidden" name="_csrf" value="${csrf.token}">
+      <div class="main-title">
+        <h1><img src="../img/logo.svg"></h1>
+        <h3>シフト確認</h3>
+        <h4>確認したいシフトを選択してください</h4>
+      </div>
+      <div class="shifts">
+        
+      </div>
+      <div class="footer"> 
+        <a onclick="javascrupt:history.back()">戻る</a>
+      </div>
+    </form>
+  </main>
+  <div class="shift-hiddens" th:each="month : ${months}">
+    <input class="shift-hidden" name="shift" th:value="${month}">
+  </div>
+</body>
+<script src="../js/checkHome.js"></script>
+</html>

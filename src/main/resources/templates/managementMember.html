@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUICK SHIFT</title>
+	<link rel="shortcut icon" href="/img/logo.svg">
+    <link rel="stylesheet" href="../css/ress.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/humbar.css">
+    <link rel="stylesheet" href="../css/member.css">
+    <link rel="stylesheet" href="../css/media.css">
+	<link rel="stylesheet" href="/css/form.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="../img/logo.svg" alt="logo">
+            <h3>QUICK SHIFT</h3>
+        </div>
+        <div class="humbar" onclick="activeClick()">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+    </header>
+    <main>
+    <form th:action="@{/completeManagementMember}" method="post">
+		<input type="hidden" name="_csrf" value="${_csrf.token}"/>
+        <div class="head-content">
+            <h2 id="title">メンバー情報</h2>
+            <h3>最大30人まで管理可能です</h3>
+        </div>
+        <div class="midle-content">
+            <div id="geneInputs">
+            </div>
+            <div class="geneInput-hidden" th:if="${members.size() > 0}" th:each="member : ${members}">
+                <input type="hidden"
+				name="name"
+				th:value="${member.name}"
+				class="hidden-value"
+				th:data-id="${member.id}">
+            </div>
+            <div class="option">
+                <h4 onclick="memberAdd()" class="add">追加</h4>
+                <h4 onclick="delMode()" class="del">削除</h4>
+           </div>
+		   <p class="error"></p>
+        </div>
+        <div class="footer-content">
+            <div class="next-back">
+                <a href="javascript:history.back()" class="back">戻る</a>
+                <input type="button" value="次へ" class="next" onclick="sendMember()">
+            </div>
+        </div>
+    </form>
+    </main>
+</body>
+<script src="../js/member.js"></script>
+<script src="../js/humbar.js"></script>
+</html>

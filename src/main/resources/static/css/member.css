@@ -1,0 +1,347 @@
+
+
+body{
+    width:100%;
+    max-width: 100%;
+    min-width: 100%;
+    height:100vh;
+    display: flex;
+    justify-content: center;
+    overflow-x: hidden;
+    overflow-y: auto;
+    font-size: 1.25rem;
+}
+h3 {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    margin: 0;
+    padding: 0;
+}
+main{
+    margin-top: 80px;
+    margin-bottom: 15px;
+    width:400px;
+    height: 600px;
+    min-height: 600px; /* 初期高さを固定 */
+    max-height: 600px; /* 必要なら最大高さを設定 */
+    color: #333;
+    font-size:0.9rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+form {
+    width: 100%;
+    min-height: 600px; /* 初期高さを固定 */
+    max-height: 600px; /* 必要なら最大高さを設定 */
+    background-color: rgba(240, 248, 255, 0.4);
+    overflow-y: auto; /* 縦スクロールを有効化 */
+    padding: 2rem;
+    padding-top: 0.1rem;
+    display: flex;
+    flex-direction: column; /* 縦に並べる */
+    align-items: flex-start; /* 左寄せ */
+    justify-content: flex-start; /* 上から並べる */
+    border: solid 1px #333;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: 6px 6px gainsboro;
+    font-size: 1rem;
+}
+
+#title {
+    padding-top: 60px;
+    padding-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+form::-webkit-scrollbar {
+    display: none;
+}
+
+
+main::-webkit-scrollbar{
+    display:none;
+  }
+
+h1 img {
+    width: 130px;
+    align-items: center;
+    margin:5px;
+}
+.adress input{
+    text-align: center;
+    padding: 0.2em 2em;
+    border-radius: 30px;
+    border: 5px solid #cccccc85;
+    margin-top: 8px;
+}  
+.adress input[type="text"]:focus {
+    outline: 2px solid #cccccc85;
+    }
+    .adress input[type="password"]:focus {
+        outline: 2px solid #cccccc85;
+        }
+button {
+    display: inline-block;
+    padding: 0.2em 2em;
+    background-color: #ddf4ff; /* 背景色 */
+    border-radius: 60px;
+    color: #fff;
+    cursor: pointer;
+    text-decoration: none;
+    margin:30px;
+  }
+
+.head-content {
+    width: 100%;
+    text-align: center;
+}
+
+.midle-content {
+    width: 100%;
+    margin-top: 20px;
+    font-size: 1rem;
+}
+
+.footer-content {
+    display: block;
+    margin-top: 50px;
+    width: 100%;
+}
+.footer-content.slide {
+    animation-name: slideUp;
+    animation-duration: 0.6s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+.footer-content.del-mode {
+    animation-name: slideout;
+    animation-duration: 0.6s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+.footer-content.on {
+    display: none;
+}
+
+.option {
+    width: 80%;
+    margin: 0 auto;
+    height: 50px;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.option h4 {
+    width: 35%;
+    height: 35px;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: 600;
+    background-color: #adf4fd;
+    color: #333;
+    box-shadow: 0 2px #f8a0d9;
+    border: none;
+    text-decoration: none;
+    transition: 0.4s;
+}
+
+.option h4:hover {
+    margin-top: 4px;
+    box-shadow:  0 2px lightcyan;
+    background-color: #f8a0d9;
+}
+
+.option h4:nth-child(2) {
+    margin-left: 10px;
+}
+
+.add{
+    padding: 8px;
+    text-align: center;
+}
+
+.del{
+    padding: 8px;
+    text-align: center;
+} 
+
+
+.next-back {
+    width: 95%;
+    margin: 0px 4px 30px;
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.1rem;
+}
+
+.next  {
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 600;
+    background-color: #adf4fd;
+    color: #333;
+    cursor: pointer;
+    box-shadow: 0 4px #f8a0d9;
+    border: none;
+    text-decoration: none;
+    transition: 0.4s;
+}
+
+.next:hover {
+    margin-top: 4px;
+    box-shadow:  0 4px lightcyan;
+    background-color: #f8a0d9;
+}
+
+.back {
+    text-decoration: none;
+    display: block;
+    width: 100px;
+    height: 40px;
+    padding-top: 7px;
+    text-align: center;
+    border-radius: 10px;
+    margin-right: 20px;
+    font-size: 1.1rem;
+    background: rgb(200, 247, 255);
+    font-weight: 600;
+    background-color: #adf4fd;
+    color: #333;
+    cursor: pointer;
+    box-shadow: 0 4px #f8a0d9;
+    border: none;
+    text-decoration: none;
+    transition: 0.4s;
+}
+
+.back:hover {
+    margin-top: 4px;
+    box-shadow:  0 4px lightcyan;
+    background-color: #f8a0d9;
+}
+
+#geneInputs {
+    display: flex;
+    margin-bottom: 60px;
+    flex-direction: column;
+}
+
+#geneInputs .geneInput {
+    width: 46%;
+    height: 100%;
+    margin: 0 auto;
+    margin-top: 20px;
+    border-bottom: 1px solid rgb(162, 162, 162) !important;
+    display: flex;
+    box-shadow: 1px 1px 3px rgb(165, 165, 165);
+    border: 1px solid rgba(221, 221, 221, 0.6);
+}
+
+#geneInputs .geneInput .checkbox.slide{
+    animation-name: slideLeft;
+    animation-duration: 0.6s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+#geneInputs .geneInput.slideUp {
+    animation-name: slideUp;
+    animation-duration: 0.6s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+#geneInputs .geneInput.slideout {
+    animation-name: slideout;
+    animation-duration: 0.6s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+.view-name.off {
+    pointer-events: none;
+}
+
+.view-name.on {
+    pointer-events: all;
+}
+
+.geneInput-hidden {
+    display: none;
+}
+
+.error {
+    color: red;
+    font-weight: 400;
+    width: 100%;
+    text-align: center;
+}
+
+.none {
+    display: none;
+}
+
+@media screen and (max-width: 431px) {
+    body{
+        width: 100%;
+    }
+    main {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        background-color: #ffffff;
+        border: none; /* borderの太さと色 */
+        border-radius: 30px;/* 角丸 */
+    }
+}
+
+@keyframes slideLeft {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        margin-top: 60px;
+    }
+
+    100% {
+        opacity: 1;
+        margin-top: 20px;
+    }
+}
+
+@keyframes slideout {
+    0% {
+        opacity: 1;
+        margin-top: 20px;
+    }
+
+    100% {
+        opacity: 0;
+        margin-top: 60px;
+    }
+}

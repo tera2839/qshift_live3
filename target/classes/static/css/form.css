@@ -1,0 +1,35 @@
+body {
+	overflow: hidden;
+}
+
+main {
+	margin-top: 80px;
+	max-height: 540px;
+	min-height: 540px;
+	max-width: 370px;
+	min-width: 370px;
+	height: 540px;
+	width: 370px;
+}
+
+
+form {
+	max-height: 540px;
+	min-height: 540px;
+	max-width: 370px;
+	min-width: 370px;
+	height: 540px;
+	width: 370px;
+	padding: 1rem;
+	padding-top: 2.5rem;
+	overflow-x: hidden;
+	box-sizing: border-box;
+}
+
+form::-webkit-scrollbar {
+	display: none;
+}
+
+img {
+	margin-top:90px;
+}

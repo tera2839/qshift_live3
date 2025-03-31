@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUICK SHIFT</title>
+	<link rel="shortcut icon" href="/img/logo.svg">
+    <link rel="stylesheet" href="../css/ress.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/humbar.css">
+    <link rel="stylesheet" href="../css/confirmAdminRequest.css">
+    <link rel="stylesheet" href="../css/media.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../img/logo.svg" alt="logo">
+            <h3>QUICK SHIFT</h3>
+        </div>
+        <div class="humbar" onclick="activeClick()">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+    </header>
+    <main>
+        <form th:action=@{/completeRequestCalendar} method="post">
+			<input type="hidden" name="_csrf" value="${_csrf.token}"/>
+            <div class="main-title">
+                <h3>シフト希望人数確認</h3>
+                <h4 class="main-title-text">このシフトで確定してもよろしいですか？</h4>
+            </div>
+            <div class="main-calendar">
+                <div class="time-plans">
+                    <div class="block up-calendar"><span id="view-year"></span></div>
+                    <div class="time-plan"></div>
+                </div>
+                <div class="calendar-container">
+                    <table id="calendar" class="up-calendar">
+                        <tr id="days"></tr>
+                        <tr id="day"></tr>
+                    </table>
+                    <table class="time">
+                    </table>
+                </div>  
+            </div>
+            <div class="footer">
+                <h4 onclick="javascript:history.back()">戻る</h4>
+                <h4 onclick="submitForm()" class="submit-button">確定</h4>
+            </div>
+        </form>
+    </main>
+    <div class="time-plans-hidden" th:each="timeplan : ${timeplans}">
+        <div class="plan-hidden" th:id="${timeplan.id}">
+            <input type="hidden" name="from" th:value="${timeplan.fromTime}" class="from">
+            <input type="hidden" name="to" th:value="${timeplan.toTime}" class="to">
+            <input type="hidden" name="plan-name" th:value="${timeplan.name}" class="plan-name">
+        </div>
+    </div>
+    <div class="year-hiddens">
+        <input type="hidden" th:value="${year}" class="year-hidden">
+        <input type="hidden" th:value="${month}" class="month-hidden">
+    </div>
+    <!-- 1timeplanname2日にち3人数 -->
+     <div class="select-hiddens" th:each="shift : ${shifts}">
+        <input type="hidden" class="select-hidden" th:value="${shift}">
+     </div>
+</body>
+<script src="../js/humbar.js"></script>
+<script src="../js/confirmAdminRequest.js"></script>
+</html>

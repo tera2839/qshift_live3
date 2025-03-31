@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUICK SHIFT</title>
+	<link rel="shortcut icon" href="/img/logo.svg">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/media_NoneHeader.css">
+	<link rel="stylesheet" href="../css/form.css">
+</head>
+<body>
+    <main>
+        <form th:action="@{/completeLogin}" method="post" th:object="${adminLoginForm}">
+            <img src="/img/logo.svg" alt="logo">
+            <h2>ログイン</h2>
+            <div class="tmp">
+                <h3 class="adpas">メールアドレス</h3> 
+                <input type="text" class="form2" th:field="*{mail}">
+            </div>
+            <div class="tmp">
+                <h3 class="adpas"> パスワード</h3>
+                <div class="pass-area">
+                    <input type="password" class="form2" id="pass" th:field="*{pass}">
+                    <span id="buttonEye" class="fa fa-eye-slash" onclick="viewChange()"></span>
+                </div>
+				<h4 id="erm" th:if="${#fields.hasErrors('mail')}" th:text="${#fields.errors('mail')[0]}"></h4>
+            </div>
+            <div class="login-form">
+                <input type="submit" value="ログイン" class="login-botton">
+            </div>
+            <div class="tmp">
+                <h4 class="first">はじめての方はこちら<a th:href="@{/createAccount}"> アカウント作成</a></h4>
+                <h4>メールアドレス,パスワードを忘れた方は<a href="">こちら</a></h4>
+            </div>
+        </form>
+    </main>
+</body>
+<script src="/js/index.js"></script>
+</html>
