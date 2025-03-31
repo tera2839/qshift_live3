@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     const shareButton = document.querySelector(".share");
     shareButton.addEventListener("click", async () => {
-        const url = window.location.href;
+        const url = document.querySelector(".url");
         const text = "各従業員はシフトを提出してください";
         const title = "クイックシフト:シフト提出";
 
