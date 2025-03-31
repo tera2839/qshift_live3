@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const urlElement = document.querySelector(".url-hidden .url");
+    const urlElement = document.querySelector(".url");
     if (!urlElement) {
         console.error("hidden input の URL が見つかりません");
         return;
