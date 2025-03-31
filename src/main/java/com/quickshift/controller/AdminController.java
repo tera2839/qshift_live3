@@ -274,7 +274,8 @@ public class AdminController {
 	
 	@PostMapping("/completeAdminRequest")
 	public String completeAdminRequest(
-			@RequestParam("requestShift")String[] shifts
+			@RequestParam("requestShift")String[] shifts,
+			Model model
 			) {
 		
 		for(int i = 0; i < shifts.length; i++) {
@@ -304,6 +305,9 @@ public class AdminController {
 			aService.saveAdminRequest(request);
 			
 		}
+		String url = aSession.getStore().getUrl();
+		model.addAttribute("url", url);
+		
 		return "redirect:/resultAdminRequest";
 	}
 	
