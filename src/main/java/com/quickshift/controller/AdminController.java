@@ -426,7 +426,7 @@ public class AdminController {
 		Store store = aService.findByStoreId(max);
 		Long id = store.getId();
 		
-		String url = "qshiftlive3-production.up.railway.app/memberLogin?store_id=" + id;
+		String url = requestUrl + "/memberLogin?store_id=" + id;
 		aService.updateStoreUrl(id, url);
 		
 		for(int i = 0; i < 15; i++) {
@@ -544,7 +544,8 @@ public class AdminController {
 	public String completeClosinfShift(
 			@RequestParam("shift") String[] shifts,
 			@RequestParam("year") String year,
-			@RequestParam("month") String month
+			@RequestParam("month") String month,
+			Model model
 			) {
 		
 		for(String shift : shifts) {
@@ -596,7 +597,8 @@ public class AdminController {
 				}
 			}
 		}
-		
+		String url = aSession.getStore().getUrl();
+		model.addAttribute("url", url);
 		return "redirect:/resultClosingShift";
 	}
 	
