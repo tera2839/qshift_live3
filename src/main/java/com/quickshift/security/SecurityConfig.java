@@ -20,7 +20,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class SecurityConfig {
 
-    private final String[] DEFAULT_URL = {"/**", "/createAccount", "/confirmCreateAccount", "/resultCreateAccount", "/completeCreateAccount", "/completeLogin","/static/**","/css/**", "/js/**", "/img/**",
+    private final String[] DEFAULT_URL = {"/", "/createAccount", "/confirmCreateAccount", "/resultCreateAccount", "/completeCreateAccount", "/completeLogin","/static/**","/css/**", "/js/**", "/img/**",
     		"/memberLogin","/completeMemberLogin","/memberSelectName","/memberHome","/memberEditHome","/memberEdit","/completeMemberEdit","resultMemberEdit","/checkHome","/checkShift"};
     
     
