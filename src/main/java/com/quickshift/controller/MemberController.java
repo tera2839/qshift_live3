@@ -281,6 +281,6 @@ public class MemberController {
 	@GetMapping("/resultMemberEdit")
 	public String showResultMemberEdit() {
 		
-		return"/resultMemberEdit";
+		return"resultMemberEdit";
 	}
 }
