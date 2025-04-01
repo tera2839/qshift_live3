@@ -28,9 +28,16 @@ server:
       timeout: 30m  # セッションタイムアウトを30分に設定（本番環境では適切に調整）
       cookie:
         max-age: 1800  # クッキーの有効期限を30分に設定（本番環境では適切に調整）
+  error:
+    include-message: always  # エラーメッセージを表示
+    include-binding-errors: always  # バリデーションエラーも表示
+    include-exception: true  # 例外の詳細を表示
+    include-stacktrace: always  # スタックトレースを表示
 
 logging:
   level:
+    org.springframework.web: DEBUG   # Spring Web のログを詳細に出力
+    org.springframework.boot.web.servlet.error.BasicErrorController: DEBUG  # ホワイトエラーページの詳細をログ出力
+    org.springframework.boot.autoconfigure.web: DEBUG  # 自動設定のエラー情報を詳細に
     org.hibernate.SQL: WARN  # SQLログの出力を抑制
     org.hibernate.type.descriptor.sql.BasicBinder: WARN  # SQLバインディングのログを抑制
-    # ログの詳細レベルを調整し、過度な出力を抑える
